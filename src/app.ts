@@ -24,7 +24,6 @@ io.on('connection', socket => {
 
 app.use(express.json())
 app.use(AppRouter)
-
 app.use(GitHubRouter)
 
 export { serverHttp, io }
