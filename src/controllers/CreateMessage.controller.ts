@@ -7,14 +7,13 @@ class CreateMessageController {
     const { user_id } = request
 
     const service = new CreateMessageService()
-    
+
     try {
       const result = await service.execute(message, user_id)
-      
-      return response.json(result)
 
+      return response.json(result)
     } catch (error) {
-      return response.json({ error: error.message})
+      return response.json({ error: error.message })
     }
   }
 }
