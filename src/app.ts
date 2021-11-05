@@ -23,7 +23,7 @@ io.on('connection', socket => {
 })
 
 app.use(express.json())
-app.use(AppRouter)
 app.use(GitHubRouter)
+app.use(AppRouter)
 
 export { serverHttp, io }

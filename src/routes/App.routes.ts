@@ -7,18 +7,6 @@ import { ensureAuthenticated } from '../middlewares/ensureAuthenticated'
 
 const AppRouter = Router()
 
-AppRouter.get('/github', (request, response) => {
-  return response.redirect(
-    `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`,
-  )
-})
-
-AppRouter.get('/signin/callback', (request, response) => {
-  const { code } = request.query
-
-  return response.json(code)
-})
-
 AppRouter.post('/authenticate', new AuthenticateUserController().handle)
 
 AppRouter.post(
